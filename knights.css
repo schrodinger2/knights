@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board {
+  width: 88vmin;
+  height: 88vmin;
+  background-color: #888;
+
+}
+
+.square {
+  width: 11vmin;
+  width: 11vmin;
+}
+
+.black {
+  background-color: #000;
+}
+
+.white {
+  background-color: #ccc;
+}
