@@ -1,9 +1,9 @@
-let g = 1;
+let boardLength = 8;
 document.body.onload =  () => {
   let board = document.querySelector(".board");
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < boardLength; i++) {
     // there are 64 squares in a chess board
-    for (var j = 0; j < 8; j++) {
+    for (var j = 0; j < boardLength; j++) {
       var newDiv = document.createElement("div");
       newDiv.className = "square";
 
@@ -57,7 +57,8 @@ function randomMoves(j, i) {
 
   let moveOneStepAt;
   let moveTwoStepsAt;
-  if (Math.floor(Math.random()*2) == 0) {
+  let random = Math.random();
+  if (random > 0.5) {
     moveTwoStepsAt = parseInt(j);
     moveOneStepAt = parseInt(i);
   }else {
@@ -65,27 +66,28 @@ function randomMoves(j, i) {
     moveOneStepAt = parseInt(j);
   }
 
-
-  if (Math.floor(Math.random()*2) == 0) {
+  // if the knight is near the end of the board the knight cant jump off it so the moves are more limited
+  if (moveTwoStepsAt <= 1 || Math.random() > 0.5 && moveTwoStepsAt <= 5) {
     moveTwoStepsAt += 2
   }else {
     moveTwoStepsAt -= 2
   }
 
 
-  if (Math.floor(Math.random()*2) == 0) {
+  if (moveOneStepAt == 0 || Math.random() > 0.5 && moveOneStepAt != 7) {
     moveOneStepAt += 1;
   }else {
     moveOneStepAt -= 1;
   }
 
   // getting the new values of i and j
-  if (twoStepsAtIOrJ = 0) {
-    j = moveTwoStepsAt
-    i = moveOneStepAt
+  if (random > 0.5) {
+    j = moveTwoStepsAt;
+    i = moveOneStepAt;
   }else {
-    i = moveTwoStepsAt
-    j = moveOneStepAt
+    i = moveTwoStepsAt;
+    j = moveOneStepAt;
   }
+
   return [j, i];
 }
