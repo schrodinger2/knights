@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  color: #fff;
 }
 body{
   background-color: #123;
@@ -18,6 +19,63 @@ body{
   grid-template-rows: repeat(8, 1fr);
   width: 88vmin;
   height: 88vmin;
+}
+
+.card {
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
+  position: absolute;
+  top: 40vmin;
+  right: 5vmin;
+  width: 22vmin;
+  height: 30vmin;
+  background-color: #58a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fight {
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
+  margin-top: 1vmin;
+  background-color: #123;
+  font-weight: bold;
+  font-size: 1em;
+  width: 20vmin;
+  height: 6vmin;
+  border: none;
+}
+
+/* .label{
+  background-color: #000;
+  height: 4vmin;
+  width: 4vmin;
+  border-radius: 4vmin;
+} */
+
+#checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+#layer_1 {
+ margin-top: 2vmin;
+ fill: #000;
+}
+
+#checkbox:checked + .label #layer_1 {
+ fill: #fff;
+}
+.fight:focus {
+  outline: none;
+  box-shadow: none;
+}
+.fight:hover {
+  outline: none;
+  color: #58a;
 }
 
 .square {
@@ -38,7 +96,4 @@ body{
 
 /* .knight {
   background-color: #000;
-  width: 5vmin;
-  height: 5vmin;
-  z-index: 25;
 } */
