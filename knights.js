@@ -16,24 +16,35 @@ document.body.onload =  () => {
       }
       document.body.querySelector(".board").appendChild(newSquare)
 
-
       newSquare.classList.add(`j${j}i${i}`); //to ideintify the squares
 
-
-      newSquare.addEventListener('click', () => {
-
-          // let knight = document.createElement("div");
-          let knight = document.createElement("img");
-          knight.src = "./knight.png"
-          knight.className = "knight";
-          newSquare.appendChild(knight)
-      });
+      newSquare.addEventListener('click', () =>  newSquare.appendChild(makingKnight("#000")));
+      }
     }
   }
+
+
+// you pass in the color of the disered knight then it creates that knight
+function makingKnight(color) {
+  let knight = document.createElement("img");
+  knight.src = "./knight.svg";
+  knight.className = "knight";
+  knight.setAttribute('fill', color);
+  return knight;
 }
 
+let fightOrStop = true;
+let interval;
 function fight() {
-  setInterval( () => { movingKnights()}, 1000);
+  if (fightOrStop) {
+    interval = setInterval( movingKnights, 700);
+    document.body.querySelector(".fight").textContent = 'Stop';
+    fightOrStop = false;
+  }else {
+    clearInterval(interval);
+    document.body.querySelector(".fight").textContent = 'Fight';
+    fightOrStop = true;
+  }
 }
 
 
@@ -97,3 +108,21 @@ function randomMoves(j, i) {
 
   return [j, i];
 }
+
+
+
+//white Knights
+
+// let checkedOrNot = 0; //when it is an odd number that means the checkbox is checked
+// document.querySelector("#checkbox").addEventListener('change', () => {
+//   checkedOrNot++;
+//   if (checkedOrNot % 2 == 1) {
+//    let squaresList = document.body.querySelectorAll("square");
+//    for (var i = 0; i < squaresList.length; i++) {
+//      squaresList[i].addEventListener('click', () => {
+//        squaresList[i].appendChild(makingKnight("#fff"));
+//        console.log("working");
+//    });
+//    }
+//   }
+// });
