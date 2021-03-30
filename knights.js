@@ -33,6 +33,7 @@ function makingKnight(color) {
   return knight;
 }
 
+
 let fightOrStop = true;
 let interval;
 function fight() {
@@ -62,6 +63,22 @@ function movingKnights() {
     let newJAndI = randomMoves(jth, ith);
     let newParentNode = document.body.querySelector(`.j${newJAndI[0]}i${newJAndI[1]}`);
     newParentNode.appendChild(knights[i])
+  }
+  doubleKnights(); //checks if a square has several knights on it
+}
+
+
+
+function doubleKnights() {
+  let squaresList = document.body.querySelectorAll(".square");
+  for (var i = 0; i < squaresList.length; i++) {
+    if (squaresList[i].hasChildNodes()) {
+      let children = squaresList[i].childNodes;
+      if (children.length > 1) {
+        console.log("bug");
+        squaresList[i].removeChild(squaresList[i].firstChild);
+      }
+    }
   }
 }
 
