@@ -26,10 +26,10 @@ body{
   -moz-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
   box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
   position: absolute;
-  top: 40vmin;
+  top: 6vmin;
   right: 5vmin;
   width: 22vmin;
-  height: 30vmin;
+  height: 88vmin;
   background-color: #58a;
   display: flex;
   flex-direction: column;
@@ -61,12 +61,12 @@ body{
   position: absolute;
 }
 
-#layer_1 {
+.layer_1 {
  margin-top: 2vmin;
  fill: #000;
 }
 
-#checkbox:checked + .label #layer_1 {
+#checkbox:checked + .label .layer_1 {
  fill: #fff;
 }
 .fight:focus {
@@ -94,6 +94,6 @@ body{
   background-color: #ccc;
 }
 
-/* .knight {
-  background-color: #000;
-} */
+.knight {
+  fill: #fff;
+}

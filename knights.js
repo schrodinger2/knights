@@ -1,5 +1,8 @@
 let boardLength = 8;
-document.body.onload =  () => {
+
+document.body.onload =  drawingBoard
+
+function drawingBoard() {
 
   //making the squares
   for (var i = 0; i < boardLength; i++) {
@@ -17,22 +20,35 @@ document.body.onload =  () => {
       document.body.querySelector(".board").appendChild(newSquare)
 
       newSquare.classList.add(`j${j}i${i}`); //to ideintify the squares
+      newSquare.addEventListener('click', makeKnight);
 
-      newSquare.addEventListener('click', () =>  newSquare.appendChild(makingKnight("#000")));
+      // you pass in the color of the desired knight then it creates that knight
+      function makeKnight() {
+        if (!newSquare.hasChildNodes()) {
+          let knight = document.createElement("img");
+          knight.src = "./knight.svg";
+          knight.className = "knight";
+          // if (checked) {
+            knight.setAttribute('fill', "white");
+            knight.style.fill = "#fff";
+            // }else {
+              // knight.setAttribute('fill', "#000");
+              // }
+          newSquare.appendChild(knight)
+        }
       }
     }
   }
-
-
-// you pass in the color of the disered knight then it creates that knight
-function makingKnight(color) {
-  let knight = document.createElement("img");
-  knight.src = "./knight.svg";
-  knight.className = "knight";
-  knight.setAttribute('fill', color);
-  return knight;
 }
 
+let checked = false
+document.querySelector("#checkbox").addEventListener('change', () => {
+  if (checked) {
+    checked = false;
+  }else {
+    checked = true;
+  }
+});
 
 let fightOrStop = true;
 let interval;
@@ -75,7 +91,6 @@ function doubleKnights() {
     if (squaresList[i].hasChildNodes()) {
       let children = squaresList[i].childNodes;
       if (children.length > 1) {
-        console.log("bug");
         squaresList[i].removeChild(squaresList[i].firstChild);
       }
     }
@@ -127,19 +142,4 @@ function randomMoves(j, i) {
 }
 
 
-
-//white Knights
-
-// let checkedOrNot = 0; //when it is an odd number that means the checkbox is checked
-// document.querySelector("#checkbox").addEventListener('change', () => {
-//   checkedOrNot++;
-//   if (checkedOrNot % 2 == 1) {
-//    let squaresList = document.body.querySelectorAll("square");
-//    for (var i = 0; i < squaresList.length; i++) {
-//      squaresList[i].addEventListener('click', () => {
-//        squaresList[i].appendChild(makingKnight("#fff"));
-//        console.log("working");
-//    });
-//    }
-//   }
-// });
+// white knight
