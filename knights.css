@@ -10,11 +10,10 @@
   color: #fff;
 }
 
-
 body {
   background-color: var(--dark-theme);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -34,10 +33,8 @@ body {
   -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  position: absolute;
-  top: 6vmin;
-  right: 5vmin;
-  width: 22vmin;
+  margin-top: 6vmin;
+  width: 30vmin;
   height: 88vmin;
   background-color: var(--theme);
   display: flex;
@@ -53,17 +50,11 @@ body {
   background-color: var(--dark-theme);
   font-weight: bold;
   font-size: 1em;
-  width: 20vmin;
+  width: 28vmin;
   height: 6vmin;
   border: none;
 }
 
-/* .label{
-  background-color: #000;
-  height: 4vmin;
-  width: 4vmin;
-  border-radius: 4vmin;
-} */
 #checkbox {
   opacity: 0;
   position: absolute;
