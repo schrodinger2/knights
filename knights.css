@@ -1,18 +1,27 @@
+:root {
+  --theme: #257;
+  --dark-theme: #123;
+  --bright-theme: #888;
+}
+
 * {
   margin: 0;
   padding: 0;
   color: #fff;
 }
-body{
-  background-color: #123;
+
+
+body {
+  background-color: var(--dark-theme);
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .board {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   margin-top: 6vmin;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -22,26 +31,26 @@ body{
 }
 
 .card {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   position: absolute;
   top: 6vmin;
   right: 5vmin;
   width: 22vmin;
   height: 88vmin;
-  background-color: #58a;
+  background-color: var(--theme);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .fight {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0,0,0,0.45);
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   margin-top: 1vmin;
-  background-color: #123;
+  background-color: var(--dark-theme);
   font-weight: bold;
   font-size: 1em;
   width: 20vmin;
@@ -55,27 +64,28 @@ body{
   width: 4vmin;
   border-radius: 4vmin;
 } */
-
 #checkbox {
   opacity: 0;
   position: absolute;
 }
 
 .layer_1 {
- margin-top: 2vmin;
- fill: #000;
+  margin-top: 2vmin;
+  fill: #000;
 }
 
-#checkbox:checked + .label .layer_1 {
- fill: #fff;
+#checkbox:checked+.label .layer_1 {
+  fill: #fff;
 }
+
 .fight:focus {
   outline: none;
   box-shadow: none;
 }
+
 .fight:hover {
   outline: none;
-  color: #58a;
+  color: var(--theme);
 }
 
 .square {
@@ -87,13 +97,9 @@ body{
 }
 
 .black {
-  background-color: #58a;
+  background-color: var(--theme);
 }
 
 .white {
-  background-color: #ccc;
-}
-
-.knight {
-  fill: #fff;
+  background-color: var(--bright-theme);
 }
