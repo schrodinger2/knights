@@ -1,3 +1,12 @@
+//opacity decreasing effect
+let full = 1
+for (var i = 0; i < 10; i++) {
+  setTimeout(() => {
+    full -= 0.1
+    document.querySelector(".read").style.opacity = full;
+  }, i * 150 + 550);
+}
+
 let boardLength = 8;
 let checked = true;
 document.body.onload = drawingBoard

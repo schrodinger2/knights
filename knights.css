@@ -34,6 +34,18 @@ body {
   grid-template-rows: repeat(8, 1fr);
   width: 56vw;
   height: 80vh;
+  position: relative;
+}
+
+.read {
+  position: absolute;
+  font-size: 2em;
+  background-color: var(--theme);
+  width: 56vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .square {
