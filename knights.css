@@ -21,21 +21,37 @@ body {
   -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  margin-top: 6vmin;
+  margin-top: auto;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  width: 88vmin;
-  height: 88vmin;
+  width: 56vw;
+  height: 80vh;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vw;
+  height: 10vh;
+}
+
+.black {
+  background-color: var(--theme);
+}
+
+.white {
+  background-color: var(--bright-theme);
 }
 
 .card {
   -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  margin-top: 6vmin;
-  width: 30vmin;
-  height: 88vmin;
+  margin-top: 10vh;
+  width: 19vw;
+  height: 80vh;
   background-color: var(--theme);
   display: flex;
   flex-direction: column;
@@ -50,9 +66,19 @@ body {
   background-color: var(--dark-theme);
   font-weight: bold;
   font-size: 1em;
-  width: 28vmin;
-  height: 6vmin;
+  width: 17vw;
+  height: 6vh;
   border: none;
+}
+
+.fight:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.fight:hover {
+  outline: none;
+  color: var(--theme);
 }
 
 #checkbox {
@@ -69,28 +95,29 @@ body {
   fill: #fff;
 }
 
-.fight:focus {
-  outline: none;
-  box-shadow: none;
-}
+@media (max-width: 819px) {
+  body {
+    flex-direction: column;
+  }
 
-.fight:hover {
-  outline: none;
-  color: var(--theme);
-}
+  .board {
+    margin-top: 4vh;
+    width: 80vw;
+    height: 80vw;
+  }
+  .square {
+    width: 10vw;
+    height: 10vw;
+  }
 
-.square {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 11vmin;
-  height: 11vmin;
-}
+  .card {
+    margin-top: 4vh;
+    width: 80vw;
+    height: auto;
+  }
 
-.black {
-  background-color: var(--theme);
-}
-
-.white {
-  background-color: var(--bright-theme);
+  .fight {
+    width: 78vw;
+    height: 6vh;
+  }
 }
