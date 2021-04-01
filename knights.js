@@ -44,13 +44,22 @@ document.querySelector("#checkbox").addEventListener('change', () => {
   }
 });
 
+let movementSpeed = 700;
+
+document.querySelector("#down").addEventListener('click', () => {
+  movementSpeed *= 1.1;
+});
+
+document.querySelector("#up").addEventListener('click', () => {
+  movementSpeed *= 0.9;
+});
 
 let fightOrStop = true;
 let interval;
 
 function fight() {
   if (fightOrStop) {
-    interval = setInterval(movingKnights, 700);
+    interval = setInterval(movingKnights, movementSpeed);
     document.body.querySelector(".fight").textContent = 'Stop';
     fightOrStop = false;
   } else {
