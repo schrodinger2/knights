@@ -38,6 +38,7 @@ body {
 }
 
 .read {
+  animation: ease-in opacity 2.5s;
   position: absolute;
   font-size: 2em;
   background-color: var(--theme);
@@ -46,6 +47,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
 }
 
 .square {
@@ -191,5 +193,15 @@ body {
     margin-top: 4vh;
     width: 80vw;
     height: auto;
+  }
+}
+
+/* keyFrames */
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
