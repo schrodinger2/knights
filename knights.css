@@ -163,7 +163,15 @@ body {
   fill: #000;
 }
 
+.layer_1:hover {
+  animation: colorShift 1.5s ease-in;
+}
+
 #checkbox:checked+.label .layer_1 {
+  fill: #fff;
+}
+#checkbox:checked+.label .layer_1:hover {
+  animation: none;
   fill: #fff;
 }
 
@@ -210,5 +218,17 @@ body {
   100% {
     opacity: 0;
     z-index: -1;
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    fill: #000;
+  }
+  50% {
+    fill: #fff;
+  }
+  100% {
+    fill: #000;
   }
 }

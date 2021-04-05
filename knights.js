@@ -10,7 +10,7 @@ function drawingBoard() {
       let newSquare = document.createElement("div");
       newSquare.className = "square";
 
-      //styling the square one black and one white
+      //styling the squares one black and one white
       if ((i + j) % 2 == 1) {
         newSquare.classList.add("black");
       } else {
