@@ -1,9 +1,24 @@
+@mixin shadow {
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+}
+@mixin center ($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+// variables
+$board-width: 56vw;
+$board-height: 80vh;
+
 :root {
   --theme: #257;
   --dark-theme: #123;
   --bright-theme: #888;
   --board-width: 56vw;
   --board-height: 80vh;
+  // btns
   --btn-width: 18vw;
   --btn-height: 5vh;
   --side-btn-width: 3vw;
@@ -21,16 +36,12 @@
 }
 
 body {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include center(space-around, center);
   background-color: var(--dark-theme);
 }
 
 .board {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  @include shadow();
   margin-top: auto;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -41,9 +52,7 @@ body {
 }
 
 .read {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center(center, center);
   animation: ease-in opacity 2.5s;
   position: absolute;
   font-size: 2em;
@@ -55,11 +64,9 @@ body {
 }
 
 .square {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 7vw;
-  height: 10vh;
+  @include center(center, center);
+  width: $board-width / 8;
+  height: $board-height / 8;
 }
 
 .black {
@@ -71,19 +78,14 @@ body {
 }
 
 .card {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  @include shadow();
   margin-top: 10vh;
   width: 20vw;
   height: var(--board-height);
   background-color: var(--theme);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  @include center(flex-start, center);
   flex-direction: column;
 }
-
 /* buttons */
 .btn {
   margin: 1vmin 0;
@@ -92,12 +94,9 @@ body {
   display: flex;
   align-items: center;
 }
-
 /* one-part btn */
 .one-part {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  @include shadow();
   background-color: var(--dark-theme);
   justify-content: center;
   border: none;
@@ -112,20 +111,14 @@ body {
   outline: none;
   box-shadow: none;
 }
-
 /* multiple-parts btns */
 .parts {
   justify-content: space-between;
 }
-
 /* two-parts btn */
 .first {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include shadow();
+  @include center(center, center);
   background-color: var(--dark-theme);
   width: var(--first-btn-width);
   height: var(--btn-height);
@@ -142,15 +135,10 @@ body {
   border: none;
   outline: none;
 }
-
 /* three-parts btns  */
 .side {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include shadow();
+  @include center(center, center);
   background-color: var(--dark-theme);
   width: var(--side-btn-width);
   height: var(--btn-height);
@@ -170,12 +158,8 @@ body {
 }
 
 .middle {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include shadow();
+  @include center(center, center);
   background-color: var(--dark-theme);
   width: var(--middle-btn-width);
   height: var(--btn-height);
@@ -184,8 +168,10 @@ body {
 .middle:hover {
   color: var(--theme);
 }
-
 @media (max-width: 819px) {
+  $board-width: 80vw;
+  $board-height: 80vw;
+
   :root {
     --board-height: 80vw;
     --board-width: 80vw;
@@ -208,8 +194,8 @@ body {
   }
 
   .square {
-    width: 10vw;
-    height: 10vw;
+    width: $board-width / 8;
+    height: $board-height / 8;
   }
 
   .card {
@@ -224,6 +210,7 @@ body {
     opacity: 1;
     z-index: 1;
   }
+
   100% {
     opacity: 0;
     z-index: 1;
@@ -233,12 +220,12 @@ body {
   0% {
     fill: #000;
   }
+
   50% {
     fill: #fff;
   }
+
   100% {
     fill: #000;
   }
 }
-
-/*# sourceMappingURL=knights.css.map */
