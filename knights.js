@@ -32,16 +32,10 @@ function drawingBoard() {
 }
 
 let fill = "fill:#000";
-let checked = true;
-document.querySelector("#checkbox").addEventListener('change', () => {
-  if (checked) {
-    fill = "fill:#fff";
-    checked = false;
-  } else {
-    fill = "fill:#000";
-    checked = true;
-  }
-});
+function color() {
+  let color = document.querySelector("#color").value
+  fill = `fill:${color}`;
+}
 
 let movementSpeed = 700;
 
@@ -59,11 +53,11 @@ let interval;
 function fight() {
   if (fightOrStop) {
     interval = setInterval(movingKnights, movementSpeed);
-    document.body.querySelector(".fight").textContent = 'Stop';
+    document.body.querySelector("#fight").textContent = 'Stop';
     fightOrStop = false;
   } else {
     clearInterval(interval);
-    document.body.querySelector(".fight").textContent = 'Fight';
+    document.body.querySelector("#fight").textContent = 'Fight';
     fightOrStop = true;
   }
 }

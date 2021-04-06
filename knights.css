@@ -6,6 +6,7 @@
   --btn-height: 5vh;
   --side-btn-width: 3vw;
   --middle-btn-width: 11vw;
+  --first-btn-width: 14.5vw;
 }
 
 * {
@@ -81,37 +82,65 @@ body {
 }
 
 /* buttons */
-#fight {
-  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
-  background-color: var(--dark-theme);
-  width: var(--btn-width);
-  height: var(--btn-height);
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#fight:hover {
-  outline: none;
-  color: var(--theme);
-}
-
-#fight:focus {
-  outline: none;
-  box-shadow: none;
-}
-
 .btn {
   margin: 1vmin 0;
   width: var(--btn-width);
   height: var(--btn-height);
   display: flex;
+  align-items: center;
+}
+
+/* one-part btn */
+.one-part {
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  background-color: var(--dark-theme);
+  justify-content: center;
+  border: none;
+}
+
+.one-part:hover {
+  outline: none;
+  color: var(--theme);
+}
+
+.one-part:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* multiple-parts btns */
+.parts {
   justify-content: space-between;
 }
 
+/* two-parts btn */
+.first {
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  background-color: var(--dark-theme);
+  width: var(--first-btn-width);
+  height: var(--btn-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first:hover {
+  color: var(--theme);
+}
+
+#color {
+  background-color: var(--dark-theme);
+  width: inherit;
+  height: inherit;
+  border: none;
+  outline: none;
+}
+
+/* three-parts btns  */
 .side {
   -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
@@ -153,33 +182,12 @@ body {
   color: var(--theme);
 }
 
-#checkbox {
-  opacity: 0;
-  position: absolute;
-}
-
-.layer_1 {
-  margin-top: 2vmin;
-  fill: #000;
-}
-
-.layer_1:hover {
-  animation: colorShift 1.5s ease-in;
-}
-
-#checkbox:checked+.label .layer_1 {
-  fill: #fff;
-}
-#checkbox:checked+.label .layer_1:hover {
-  animation: none;
-  fill: #fff;
-}
-
 @media (max-width: 819px) {
   :root {
     --btn-width: 78vw;
     --side-btn-width: 11vw;
     --middle-btn-width: 52vw;
+    --first-btn-width: 65vw;
   }
 
   body {
@@ -225,9 +233,11 @@ body {
   0% {
     fill: #000;
   }
+
   50% {
     fill: #fff;
   }
+
   100% {
     fill: #000;
   }
