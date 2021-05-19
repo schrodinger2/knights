@@ -38,6 +38,8 @@ $board-height: 80vh;
 body {
   @include center(space-around, center);
   background-color: var(--dark-theme);
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .board {

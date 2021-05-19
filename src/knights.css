@@ -25,6 +25,8 @@ body {
   justify-content: space-around;
   align-items: center;
   background-color: var(--dark-theme);
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .board {
