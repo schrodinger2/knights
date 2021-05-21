@@ -6,7 +6,7 @@ const Board = (props) => {
   return (
     // <div className="board"></div>
     <div className="board">
-      <DrawingSquares onKnight={props.onKnight} />
+      <DrawingSquares onKnight={props.onKnight} svgOn={props.svgOn}/>
     </div>
     // <DrawingSquare j={2} i={1} onKnight={props.onKnight}/>
   );
