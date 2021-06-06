@@ -3,11 +3,11 @@ import { useState } from 'react';
 let fightOrStop = true;
 
 let interval;
-const Fight = ({onNewIteration}) => {
+const Fight = ({onNewIteration, movementSpeed}) => {
   let [text, setText] = useState("Fight");
   const changer = () => {
     if (fightOrStop) {
-      interval = setInterval(() => onNewIteration(), 1000);
+      interval = setInterval(() => onNewIteration(), movementSpeed);
       setText(prevText => prevText = "Stop");
       fightOrStop = false;
     }else {
