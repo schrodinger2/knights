@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import newKnights from './movingKnights';
 
 let fightOrStop = true;
-const Fight = () => {
-  let interval;
+
+let interval;
+const Fight = ({onNewIteration}) => {
   let [text, setText] = useState("Fight");
   const changer = () => {
     if (fightOrStop) {
-      interval = setInterval(newKnights, 1000);
+      interval = setInterval(() => onNewIteration(), 1000);
       setText(prevText => prevText = "Stop");
       fightOrStop = false;
     }else {
