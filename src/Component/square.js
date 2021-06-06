@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import Svg from './svg.jsx';
 
-const DrawingSquare = ({svg, i, j, onKnight, knight}) => {
+const DrawingSquare = ({fill, i, j, onKnight, knight}) => {
 
   let classes = `square`;
   //styling the squares one black and one white
@@ -10,7 +10,7 @@ const DrawingSquare = ({svg, i, j, onKnight, knight}) => {
     classes += ` white`;
   }
 
-  const newSquare = < div key={{i: i, j: j}} className={classes} onClick={() => onKnight(i, j)}> {knight ? svg : null} < /div>;
+  const newSquare = < div key={{i: i, j: j}} className={classes} onClick={() => onKnight(i, j)}> {knight ? <Svg fill={fill} /> : null} < /div>;
   return newSquare;
 }
 
