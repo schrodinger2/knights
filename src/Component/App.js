@@ -82,10 +82,11 @@ class App extends React.Component {
     this.setState({ squares64: newSquare64 })
   };
 
-  knightTrueOrFalse = (i, j, boolean) => {
+  knightTrueOrFalse = (i, j, boolean, fill) => {
     const th = i * 8 + j;
     let newSquare64 = this.state.squares64
     newSquare64[th].knight = boolean;
+    if ( fill ) newSquare64[th].fill = fill;
     this.setState({ squares64: newSquare64 })
   };
 
@@ -136,10 +137,10 @@ class App extends React.Component {
     let knightAppear = [];
     for (var i = 0; i < knightDisappear.length; i++) {
       let [iii, jjj] = this.randomMoves(knightDisappear[i].i, knightDisappear[i].j);
-      knightAppear.push({i: iii, j: jjj});
+      knightAppear.push({i: iii, j: jjj, fill: knightDisappear[i].fill});
     }
     knightDisappear.map(square => this.knightTrueOrFalse(square.i, square.j, false))
-    knightAppear.map(square => this.knightTrueOrFalse(square.i, square.j, true))
+    knightAppear.map(square => this.knightTrueOrFalse(square.i, square.j, true, square.fill))
   };
 
   changeMovementSpeed = up => {
