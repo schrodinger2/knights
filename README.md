@@ -1,4 +1,4 @@
-#knights
+# knights
 
 This is a simple front-end web game.
 Game rules:
