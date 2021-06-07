@@ -82,6 +82,13 @@ class App extends React.Component {
     this.setState({ squares64: newSquare64 })
   };
 
+  knightTrueOrFalse = (i, j, boolean) => {
+    const th = i * 8 + j;
+    let newSquare64 = this.state.squares64
+    newSquare64[th].knight = boolean;
+    this.setState({ squares64: newSquare64 })
+  };
+
   randomMoves = (i, j) => {
   // The knight moves "L" shape in any direction
   // So plus or minus 2 in the X axis and plus or minus 1 in the Y axis
@@ -131,8 +138,8 @@ class App extends React.Component {
       let [iii, jjj] = this.randomMoves(knightDisappear[i].i, knightDisappear[i].j);
       knightAppear.push({i: iii, j: jjj});
     }
-    knightDisappear.map(square => this.unKnight(square.i, square.j))
-    knightAppear.map(square => this.unKnight(square.i, square.j))
+    knightDisappear.map(square => this.knightTrueOrFalse(square.i, square.j, false))
+    knightAppear.map(square => this.knightTrueOrFalse(square.i, square.j, true))
   };
 
   changeMovementSpeed = up => {
