@@ -1,3 +1,5 @@
+# knights
+
 This is a simple front-end web game.
 Game rules:
 1. knights move in "L" shape in random direction
